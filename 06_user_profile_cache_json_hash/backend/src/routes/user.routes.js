@@ -1,8 +1,9 @@
 import express from 'express'
-import { createUser } from '../controllers/user.controller.js';
+import { createUserWithJSON, getUserWithJSON } from '../controllers/user.controller.js';
 
 const userRoute = express.Router();
 
-userRoute.post("/user/:id/json", createUser)
+userRoute.post("/user/:id/json", createUserWithJSON);
+userRoute.get("/user/:id/json", getUserWithJSON);
 
 export { userRoute }
